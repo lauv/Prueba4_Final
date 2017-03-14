@@ -1,0 +1,4 @@
+$('#modal_enterprise_<%= @enterprise.id %>').modal('hide');
+console.log('modal_enterprise_<%= @enterprise.id %>')
+$("#enterprise_<%= @enterprise.id %>").empty();
+$("tbody").prepend("<%= j reder 'videos', enterprise: @enterprise %>");

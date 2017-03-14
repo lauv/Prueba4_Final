@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Crear un seed con 20 compañías, 30 usuarios y 250 reclamos, los reclamos deben
+# ir a asignados a los usuarios y a las compañías respectivas, dentro del seed
+# especificar los created_at de los reclamos para que ninguno sea más antiguo a un
+# mes.
+
+Claim.destroy_all
+User.destroy_all
+Enterprise.destroy_all
+
+20.times do |e|
+	Enterprise.create(name: "Empresa#{e}")
+	User.create(name: "Usuario #{e}", email: "usuario#{e}@go.cl", encrypted_password: "123456")
+	12.times do |r|
+		Claim.create(content: "No me gusta esto #{r}", user_id: e)
+	end
+end
+
+10.times do |f|
+	User.create(name: "Usuario #{f}", email: "usuario#{f}@go.cl", encrypted_password: "123456")
+end	
