@@ -15,14 +15,26 @@ Claim.destroy_all
 User.destroy_all
 Enterprise.destroy_all
 
-20.times do |e|
-	Enterprise.create(name: "Empresa#{e}")
-	User.create(name: "Usuario #{e}", email: "usuario#{e}@go.cl", encrypted_password: "123456")
+
+ 20.times do |e|
+ 	Enterprise.create(name: "Empresa#{e}")
+	user = User.create(name: "Usuario#{e}", email:"guy#{e}@gmail.com", role: 1, password: "111111", password_confirmation:"111111")
 	12.times do |r|
-		Claim.create(content: "No me gusta esto #{r}", user_id: e)
+		Claim.create(content: "No me gusta esto #{r}", user_id: user.id)
 	end
 end
 
-10.times do |f|
-	User.create(name: "Usuario #{f}", email: "usuario#{f}@go.cl", encrypted_password: "123456")
-end	
+
+
+
+# 20.times do |e|
+# 	Enterprise.create(name: "Empresa#{e}")
+# 	User.create(name: "Usuario #{e}", email: "usuario#{e}@go.cl", encrypted_password: "123456")
+# 	12.times do |r|
+# 		Claim.create(content: "No me gusta esto #{r}", user_id: e)
+# 	end
+# end
+
+# 10.times do |f|
+# 	User.create(name: "Usuario #{f}", email: "usuario#{f}@go.cl", encrypted_password: "123456")
+# end	
