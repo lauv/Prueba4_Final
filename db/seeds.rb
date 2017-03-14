@@ -23,18 +23,3 @@ Enterprise.destroy_all
 		Claim.create(content: "No me gusta esto #{r}", user_id: user.id)
 	end
 end
-
-
-
-
-# 20.times do |e|
-# 	Enterprise.create(name: "Empresa#{e}")
-# 	User.create(name: "Usuario #{e}", email: "usuario#{e}@go.cl", encrypted_password: "123456")
-# 	12.times do |r|
-# 		Claim.create(content: "No me gusta esto #{r}", user_id: e)
-# 	end
-# end
-
-# 10.times do |f|
-# 	User.create(name: "Usuario #{f}", email: "usuario#{f}@go.cl", encrypted_password: "123456")
-# end	
